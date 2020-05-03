@@ -14,6 +14,9 @@ cd valkyrie-app
 ```
 4. Create a Dockerfile with this info
 ```
+nano Dockerfile
+```
+```
 FROM golang:1.10
 WORKDIR /go/src/app
 COPY source .
