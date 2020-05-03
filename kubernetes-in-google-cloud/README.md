@@ -8,10 +8,11 @@ source <(gsutil cat gs://cloud-training/gsp318/marking/setup_marking.sh)
 ```
 gcloud source repos clone valkyrie-app
 ```
-3. Change directory and create a Dockerfile
+3. Change directory
 ```
 cd valkyrie-app
 ```
+4. Create a Dockerfile with this info
 ```
 FROM golang:1.10
 WORKDIR /go/src/app
@@ -19,7 +20,7 @@ COPY source .
 RUN go install -v
 ENTRYPOINT ["app","-single=true","-port=8080"]
 ```
-4. Create a Docker image called valkyrie-app with the tag v0.0.1
+5. Create a Docker image called valkyrie-app with the tag v0.0.1
 ```
 docker build -t valkyrie-app:v0.0.1 .
 ```
