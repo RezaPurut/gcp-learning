@@ -27,3 +27,17 @@ ENTRYPOINT ["app","-single=true","-port=8080"]
 ```
 docker build -t valkyrie-app:v0.0.1 .
 ```
+6. Run `step1.sh` to check the progress
+```
+./step1.sh
+```
+## Task 2: Test the created Docker image
+1. Launch a container using the image valkyrie-app:v0.0.1. Map the host’s port 8080 to port 8080 on the container. Name it `kraken-app` and add `&` at the end to let it run in the background 
+```
+docker run -p 8080:8080 --name kraken-app valkyrie-app:v0.0.1 &
+```
+2. Run `step2.sh` to check the progress
+```
+./step2.sh
+```
+
