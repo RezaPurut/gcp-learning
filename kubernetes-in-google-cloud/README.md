@@ -40,4 +40,12 @@ docker run -p 8080:8080 --name kraken-app valkyrie-app:v0.0.1 &
 ```
 ./step2.sh
 ```
-
+## Task 3: Push the Docker image in the Container Repository
+1. Before push the image, re-tag the container to gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
+```
+docker tag valkyrie-app:v0.0.1 gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
+```
+2. Push the Docker image
+```
+docker push gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
+```
