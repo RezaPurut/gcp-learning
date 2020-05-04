@@ -49,3 +49,38 @@ docker tag valkyrie-app:v0.0.1 gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
 ```
 docker push gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
 ```
+## Task 4: Create and expose a deployment in Kubernetes
+1. Change IMAGE_HERE in `k8s/deployment.yaml` file to gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.1
+```
+nano k8s/deployment.yaml
+```
+2. Get the Kubernetes credentials
+```
+gcloud container clusters get-credentials valkyrie-dev --zone us-east1-d
+```
+3. Create the deployment and the service
+```
+kubectl create -f k8s/deployment.yaml
+kubectl create -f k8s/service.yaml
+```
+## Task 5: Update the deployment with a new version of valkyrie-app
+1. Increase the replicas from 1 to 3
+```
+kubectl scale deployment valkyrie-dev --replicas=3
+```
+2. Merge kurt-dev into master
+```
+git merge origin/kurt-dev
+```
+3. Build the new code as version v0.0.2 of valkyrie-app
+```
+docker build -t gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.2
+```
+4. Push the updated image to the Container Repository
+```
+docker push gcr.io/YOUR_PROJECT/valkyrie-app:v0.0.2
+```
+5. Update the deployment with a new version of valkyrie-app
+```
+kubectl edit deployment valkyrie-dev
+```
