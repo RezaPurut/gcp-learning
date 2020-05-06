@@ -67,4 +67,7 @@ To toggle this feature, try out the F2 toggle:
 
 F2:help:STATE Toggles the active help section, ON when enabled, OFF when disabled
 ## SSH into your vm instance
+```
+gcloud compute ssh gcelab2 --zone $ZONE
+```
 
