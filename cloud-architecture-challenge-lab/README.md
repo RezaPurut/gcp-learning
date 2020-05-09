@@ -71,3 +71,27 @@ Then add one more network interface
 
 Network: **kraken-prod-subnet**
 
+2. After the instance created, copy ID from its detail page.
+## Monitoring
+1. **Navigation menu** > **Monitoring**
+2. **Alerting** > **Create Policy**
+Name: **kraken-admin-monitoring**
+
+Click **Add Condition**
+
+Target: **GCE VM instance**
+
+Metric: **CPU utilization**
+
+Filter: **instance id**
+
+Condition: **is above**
+
+Threshold: **50**
+
+For: **1 minute**
+
+Click **Add**
+
+**Notification setting** > **Add Notification Channel** > **email**
+
