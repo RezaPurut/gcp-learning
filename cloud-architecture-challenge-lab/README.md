@@ -100,7 +100,8 @@ Click **Add**
 1. Go to cloud shell.
 2. To access the Spinnaker console use Cloud Shell and `kubectl` to port forward the spin-deck pod from port **9000 to 8080** and then use Cloud Shell's web preview.
 3. Three ways:
-**3.1:** 
+
+    **3.1:** 
 ```
 gcloud container clusters get-credentials spinnaker-tutorial --zone us-east1-b --project <project-id>
 ```
@@ -111,9 +112,9 @@ export DECK_POD=$(kubectl get pods --namespace default -l "cluster=spin-deck" \
 ```
 kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 ```
-**3.2**
+   **3.2**
 ```
 gcloud container clusters get-credentials spinnaker-tutorial --zone us-east1-b --project <project-id> \
  && kubectl port-forward $(kubectl get pod --selector="app=spin,cluster=spin-deck" --output jsonpath='{.items[0].metadata.name}') 8080:9000
 ```
-**3.3**
+   **3.3**
