@@ -112,9 +112,9 @@ export DECK_POD=$(kubectl get pods --namespace default -l "cluster=spin-deck" \
 ```
 kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 ```
-   **3.2**
+      **3.2**
 ```
 gcloud container clusters get-credentials spinnaker-tutorial --zone us-east1-b --project <project-id> \
  && kubectl port-forward $(kubectl get pod --selector="app=spin,cluster=spin-deck" --output jsonpath='{.items[0].metadata.name}') 8080:9000
 ```
-   **3.3**
+      **3.3**
