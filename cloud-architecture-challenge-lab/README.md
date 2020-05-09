@@ -76,32 +76,31 @@ Network: **kraken-prod-subnet**
 From Question: Monitor kraken-admin and if CPU utilization is over 50% for more than a minute you need to send an email to yourself, as admin of the system
 1. **Navigation menu** > **Monitoring**
 2. **Alerting** > **Create Policy**
-Name: **kraken-admin-monitoring**
+    
+    Name: **kraken-admin-monitoring**
+ 
+    Click **Add Condition**
 
-Click **Add Condition**
+    Target: **GCE VM instance**
 
-Target: **GCE VM instance**
+    Metric: **CPU utilization**
 
-Metric: **CPU utilization**
+    Filter: **instance id**
 
-Filter: **instance id**
+    Condition: **is above**
 
-Condition: **is above**
+    Threshold: **50**
 
-Threshold: **50**
+    For: **1 minute**
 
-For: **1 minute**
+    Click **Add**
 
-Click **Add**
-
-**Notification setting** > **Add Notification Channel** > **email**
+    **Notification setting** > **Add Notification Channel** > **email**
 
 ## Task 3: Verify the Spinnaker deployment
 1. Go to cloud shell.
 2. To access the Spinnaker console use Cloud Shell and `kubectl` to port forward the spin-deck pod from port **9000 to 8080** and then use Cloud Shell's web preview.
-3. Three ways:
-
-**First** 
+3. Three ways (choose one of it):
 ```
 gcloud container clusters get-credentials spinnaker-tutorial --zone us-east1-b --project <project-id>
 ```
@@ -112,9 +111,16 @@ export DECK_POD=$(kubectl get pods --namespace default -l "cluster=spin-deck" \
 ```
 kubectl port-forward --namespace default $DECK_POD 8080:9000 >> /dev/null &
 ```
-**Second**
+**OR**
 ```
 gcloud container clusters get-credentials spinnaker-tutorial --zone us-east1-b --project <project-id> \
  && kubectl port-forward $(kubectl get pod --selector="app=spin,cluster=spin-deck" --output jsonpath='{.items[0].metadata.name}') 8080:9000
 ```
-**Third**
+**OR**
+
+**Navigation menu** > **Kubernetes Engine** > **Services & Ingress**
+
+search for the pods (spin-deck)
+
+scroll down search for **port forwarding**
+
