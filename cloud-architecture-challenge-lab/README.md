@@ -55,7 +55,6 @@ kubectl get services
 ```
 ## Task 2: Setup the Admin instance
 1. Create an instance called kraken-admin. Go to **Navigation menu** > **Compute Engine** > **VM instance** > **Create instance**.
-```
 Name: **kraken-admin**
 Region: **us-east1**
 Zone: **us-east1-b**
@@ -64,4 +63,4 @@ Machine type: **n1-standard1**
 Network: **kraken-mgmt-subnet**
 Then add one more network interface
 Network: **kraken-prod-subnet**
-```
+
