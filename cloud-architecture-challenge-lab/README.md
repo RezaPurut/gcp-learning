@@ -21,4 +21,36 @@ nano prod-network.yaml
 ```
 gcloud deployment-manager deployments create kraken-prod-vpc --config prod-network.yaml
 ```
+5. Return to cloud shell
+6. Check subnet name. Go to **Navigation Menu** > **Kubernetes Engine** > **Clusters** > **Create Cluster** > change Region to **us-east1** > **Networking**.
+7. Create a two (2) node cluster called kraken-prod in the kraken-prod-vpc
+```
+gcloud container clusters create kraken-prod --network kraken-prod-vpc --subnetwork kraken-prod-subnet --num-nodes=2 --zone us-east1-b
+```
+8. SSH to jumphost again.
+9. Use kubectl with the files in /work/k8s to create the frontend and backend deployments and services (which will expose the frontend service via a load balancer).
+```
+cd /work/k8s
+```
+```
+kubectl create -f deployment-prod-backend.yaml
+```
+```
+kubectl create -f deployment-prod-frontend.yaml
+```
+10. Check created pods
+```
+kubectl get pods
+```
+11. Create services
+```
+kubectl create -f service-prod-backend.yaml
+```
+```
+kubectl create -f service-prod-frontend.yaml
+```
+12. Check created services
+```
+kubectl get services
+```
 
