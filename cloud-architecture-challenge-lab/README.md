@@ -134,3 +134,14 @@ cd sample-app
 git config --global user.email "$(gcloud config get-value core/account)"
 git config --global user.name "$(gcloud config get-value core/account)"
 ```
+7. Make some change to code to trigger the pipeline. Change color from orange to blue.
+```
+sed -i 's/orange/blue/g' cmd/gke-info/common-service.go
+```
+8. Tag the change and push it to the source code repository
+```
+git commit -a -m "Change to blue"
+git tag v1.0.1
+git push --tags
+```
+9. Go to Spinnaker UI again and click Pipelines to watch the pipeline start to deploy the image to production. Wait till it completes. After the pipeline completes, check the color in the application. It should be blue.
