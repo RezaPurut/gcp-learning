@@ -124,3 +124,13 @@ search for the pods (spin-deck)
 
 scroll down search for **port forwarding**
 
+4. Click the Web Preview icon at the top of the Cloud Shell window and select Preview on port 8080. This will open Spinnaker web interface
+
+5. **Navigation menu** > **Source Repositories** > **Click sample-app** > **Click Clone** > copy command to cloud shell
+
+6. Set the username and email for the Git commits in this repository
+```
+cd sample-app
+git config --global user.email "$(gcloud config get-value core/account)"
+git config --global user.name "$(gcloud config get-value core/account)"
+```
