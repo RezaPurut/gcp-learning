@@ -44,3 +44,7 @@ gcloud compute firewall-rules create griffin-prod-allow-icmp-ssh-rdp \
 ```
 gcloud compute networks list
 ```
+5. List firewall-rules sorted by VPC network
+```
+gcloud compute firewall-rules list --sort-by=NETWORK
+```
