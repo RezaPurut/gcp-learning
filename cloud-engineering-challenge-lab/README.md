@@ -71,6 +71,8 @@ gcloud deployment-manager deployments create griffin-prod-configuration --config
 1. Create instance. **Navigation menu** > **Compute Engine** > **VM instances**
 
       zone: **us-east1-b**
+      
       network interface: **griffin-dev-mgmt**
+      
       network interface: **griffin-prod-mgmt**
 
