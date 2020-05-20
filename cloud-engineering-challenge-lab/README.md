@@ -68,3 +68,9 @@ nano prod-network.yaml
 gcloud deployment-manager deployments create griffin-prod-configuration --config prod-network.yaml
 ```
 ## Task 3: Create bastion host
+1. Create instance. **Navigation menu** > **Compute Engine** > **VM instances**
+```
+zone: us-east1-b
+network interface: griffin-dev-mgmt
+network interface: griffin-prod-mgmt
+```
