@@ -75,4 +75,6 @@ gcloud deployment-manager deployments create griffin-prod-configuration --config
       network interface: **griffin-dev-mgmt**
       
       network interface: **griffin-prod-mgmt**
+      
+Leave other values default
 
