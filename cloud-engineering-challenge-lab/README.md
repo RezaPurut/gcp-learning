@@ -48,3 +48,22 @@ gcloud compute networks list
 ```
 gcloud compute firewall-rules list --sort-by=NETWORK
 ```
+## Task 2: Create production VPC using Deployment Manager
+1. Copy all files from `gs://cloud-training/gsp321/dm`
+```
+gsutil cp -r gs://cloud-training/gsp321/dm .
+```
+```
+cd dm/
+```
+```
+ls
+```
+2. Change zone in `prod-network.yaml` file to our zone: `us-east1-b`. Also check the subnet, make sure it is set to the subnet value that we created before
+```
+nano prod-network.yaml
+```
+3. Create the production VPC
+```
+gcloud deployment-manager deployments create griffin-prod-configuration --config prod-network.yaml
+```
