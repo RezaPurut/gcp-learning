@@ -67,3 +67,4 @@ nano prod-network.yaml
 ```
 gcloud deployment-manager deployments create griffin-prod-configuration --config prod-network.yaml
 ```
+## Task 3: Create bastion host
