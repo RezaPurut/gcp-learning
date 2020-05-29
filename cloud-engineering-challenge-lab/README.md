@@ -86,5 +86,5 @@ Leave other values default
        
       * region: **us-east1**
        
-      * password: <your password>
+      * password: *<your password>*
 
