@@ -77,4 +77,7 @@ gcloud deployment-manager deployments create griffin-prod-configuration --config
       network interface: **griffin-prod-mgmt**
       
 Leave other values default
+2. SSH to the created host
 
+## Task 4: Create and configure Cloud SQL Instance
+1. Create a MySQL Cloud SQL Instance called `griffin-dev-db` in `us-east1`
