@@ -80,4 +80,10 @@ Leave other values default
 2. SSH to the created host
 
 ## Task 4: Create and configure Cloud SQL Instance
-1. Create a MySQL Cloud SQL Instance called `griffin-dev-db` in `us-east1`
+1. **Navigation menu** > **SQL**. Click **Create Instance** > select **MYSQL**
+      instance id: **griffin-dev-db**
+       
+      region: **us-east1**
+       
+      password: <your password>
+
