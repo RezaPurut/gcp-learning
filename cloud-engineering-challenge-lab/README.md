@@ -70,20 +70,21 @@ gcloud deployment-manager deployments create griffin-prod-configuration --config
 ## Task 3: Create bastion host
 1. Create instance. **Navigation menu** > **Compute Engine** > **VM instances**
 
-      zone: **us-east1-b**
+      * zone: **us-east1-b**
       
-      network interface: **griffin-dev-mgmt**
+      * network interface: **griffin-dev-mgmt**
       
-      network interface: **griffin-prod-mgmt**
+      * network interface: **griffin-prod-mgmt**
       
 Leave other values default
 2. SSH to the created host
 
 ## Task 4: Create and configure Cloud SQL Instance
 1. **Navigation menu** > **SQL**. Click **Create Instance** > select **MYSQL**
-      instance id: **griffin-dev-db**
+      
+      * instance id: **griffin-dev-db**
        
-      region: **us-east1**
+      * region: **us-east1**
        
-      password: <your password>
+      * password: <your password>
 
