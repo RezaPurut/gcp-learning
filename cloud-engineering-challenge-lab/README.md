@@ -88,3 +88,18 @@ Leave other values default
        
       * password: *\<your password>*
 
+2. Connect to the instance
+```
+gcloud sql connect griffin-dev-db --user=root
+```
+3. Run this SQL commands to prepare the Wordpress environment
+```
+CREATE DATABASE wordpress;
+GRANT ALL PRIVILEGES ON wordpress.* TO "wp_user"@"%" IDENTIFIED BY "stormwind_rules";
+FLUSH PRIVILEGES;
+```
+4. Exit MYSQL
+```
+exit
+```
+
