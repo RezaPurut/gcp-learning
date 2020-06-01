@@ -136,3 +136,4 @@ gcloud iam service-accounts keys create key.json \
 kubectl create secret generic cloudsql-instance-credentials \
     --from-file key.json
 ```
+## Task 7: Create a WordPress deployment
