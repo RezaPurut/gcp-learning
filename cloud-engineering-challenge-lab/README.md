@@ -102,4 +102,9 @@ FLUSH PRIVILEGES;
 ```
 exit
 ```
+## Task 5: Create Kubernetes cluster
+1. Create a 2 node cluster using `n1-standard-4` called `griffin-dev`, in the `griffin-dev-wp` subnet, and in `zone us-east1-b`
+```
+gcloud container clusters create griffin-dev --network griffin-dev-vpc --subnetwork griffin-dev-wp --num-nodes=2 --zone us-east1-b
+```
 
