@@ -137,3 +137,7 @@ kubectl create secret generic cloudsql-instance-credentials \
     --from-file key.json
 ```
 ## Task 7: Create a WordPress deployment
+1. Edit `wp-deployment.yaml` to replace **YOUR_SQL_INSTANCE** with griffin-dev-db's **instance connection name**. Can find it from **Navigation Menu** > **SQL**
+```
+nano wp-deployment.yaml
+```
