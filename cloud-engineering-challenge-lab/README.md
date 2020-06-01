@@ -107,4 +107,20 @@ exit
 ```
 gcloud container clusters create griffin-dev --network griffin-dev-vpc --subnetwork griffin-dev-wp --num-nodes=2 --zone us-east1-b
 ```
+## Task 6: Prepare the Kubernetes cluster
+1. Go to Cloud Shell and change directory to home directory. Copy all files from `gs://cloud-training/gsp321/wp-k8s`
+```
+cd
+```
+```
+gsutil cp -r gs://cloud-training/gsp321/wp-k8s .
+```
+2. Change directory to `wp-k8s` and add the secrets and volume to the cluster using `wp-env.yaml`. Make sure `username: wp_user` and `password: stormwind_rules`
+```
+cd wp-k8s
+```
+```
+nano wp-env.yaml
+```
+
 
