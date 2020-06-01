@@ -122,5 +122,17 @@ cd wp-k8s
 ```
 nano wp-env.yaml
 ```
-
-
+3. Create the Kubernetes environment
+```
+kubectl create -f wp-env.yaml
+```
+4. Provide a key for a service account that was already set up
+```
+gcloud iam service-accounts keys create key.json \
+    --iam-account=cloud-sql-proxy@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
+```
+5. Then add the key to the Kubernetes environment
+```
+kubectl create secret generic cloudsql-instance-credentials \
+    --from-file key.json
+```
