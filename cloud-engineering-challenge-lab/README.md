@@ -141,3 +141,17 @@ kubectl create secret generic cloudsql-instance-credentials \
 ```
 nano wp-deployment.yaml
 ```
+2. Replace **YOUR_SQL_INSTANCE** with **griffin-dev-db's Instance connection name**. **Navigation menu** > **SQL** > find instance name.
+
+3. Create WordPress deployment
+```
+kubectl create -f wp-deployment.yaml
+```
+4. Check the deployment
+```
+kubectl get deployments
+```
+5. create the service with `wp-service.yaml`
+```
+nano wp-service.yaml
+```
