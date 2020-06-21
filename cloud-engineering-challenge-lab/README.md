@@ -176,6 +176,6 @@ kubectl get services
     * Port: 80
     * Check every: 1 minute
 
-Click Test
-Save
-Alerting just click No, Thanks
+3. Click **Test**
+4. Click **Save**
+5. **Alerting** just click **No, Thanks**
