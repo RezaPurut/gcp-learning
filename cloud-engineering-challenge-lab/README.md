@@ -164,3 +164,18 @@ kubectl create -f wp-service.yaml
 kubectl get services
 ```
 7. Get the external IP and paste it in browser
+
+## Task 8: Enable monitoring
+1. **Navigation menu** > **Monitoring**
+2. **Uptime Checks** > Click **Create Uptime Checks**
+
+    *  Title: Check1
+    *  Check Type: TCP
+    * Resource Type: URL
+    * Hostname: <ext ip from kubectl get service>
+    * Port: 80
+    * Check every: 1 minute
+
+Click Test
+Save
+Alerting just click No, Thanks
