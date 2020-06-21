@@ -151,7 +151,16 @@ kubectl create -f wp-deployment.yaml
 ```
 kubectl get deployments
 ```
-5. create the service with `wp-service.yaml`
+5. Create the service with `wp-service.yaml`
 ```
 nano wp-service.yaml
 ```
+Check the `wp-service.yaml` to see if there is anything that should be changed. If not, leave the file as it is.
+```
+kubectl create -f wp-service.yaml
+```
+6. Check the service
+```
+kubectl get services
+```
+7. Get the external IP and paste it in browser
