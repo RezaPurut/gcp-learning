@@ -179,3 +179,8 @@ kubectl get services
 3. Click **Test**
 4. Click **Save**
 5. **Alerting** just click **No, Thanks**
+
+## Task 9: Provide access for an additional engineer
+1. **Navigation menu** > **IAM & admin** > **IAM**
+2. Click **+Add** and paste username2
+3. Go to **Roles** > **Project** > Select **Editor**
