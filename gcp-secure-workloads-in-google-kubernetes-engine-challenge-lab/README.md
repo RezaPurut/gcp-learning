@@ -15,3 +15,7 @@ gcloud container clusters create kraken-cluster1  \
 ```
 
 ## Task 2: Setup WordPress
+1. Create a Cloud SQL instance in us-central1, using the default values
+```
+gcloud sql instances create kraken-sql --root-password=root
+```
