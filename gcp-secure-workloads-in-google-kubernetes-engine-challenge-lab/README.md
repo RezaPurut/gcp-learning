@@ -19,3 +19,7 @@ gcloud container clusters create kraken-cluster1  \
 ```
 gcloud sql instances create kraken-sql --root-password=root
 ```
+2. Create a Cloud SQL database for WordPress
+```
+gcloud sql databases create wordpress --instance=kraken-sql 
+```
