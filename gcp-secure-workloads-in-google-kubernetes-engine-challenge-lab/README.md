@@ -13,3 +13,5 @@ gcloud container clusters create kraken-cluster1  \
 --enable-network-policy \
 --zone=us-central1-c
 ```
+
+## Task 2: Setup WordPress
