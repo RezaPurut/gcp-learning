@@ -23,3 +23,9 @@ gcloud sql instances create kraken-sql --root-password=root
 ```
 gcloud sql databases create wordpress --instance=kraken-sql 
 ```
+3. Create users using the following values
+```
+gcloud sql users create wordpress --instance=kraken-sql --password=wordpress --host=%
+
+gcloud sql users create test --instance=kraken-sql --password=wordpress --host=%
+```
