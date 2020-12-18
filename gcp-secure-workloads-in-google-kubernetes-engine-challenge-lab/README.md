@@ -50,6 +50,7 @@ gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.clie
  ```
  *NOTE: In case you do this in one user/account, you will need to reactivate the it. Use this command:*
  `gcloud auth login`
+ 
  8. Save the service account json file as a secret in your Kubernetes cluster
  ```
  gcloud container clusters get-credentials kraken-cluster1 --zone us-central1-c
