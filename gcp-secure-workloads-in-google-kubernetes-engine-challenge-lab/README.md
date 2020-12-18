@@ -52,6 +52,7 @@ gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.clie
  `gcloud auth login`
  
  8. Save the service account json file as a secret in your Kubernetes cluster
+ 
  Below command before the `kubectl` is an additional step to allow kubectl to use these credentials when communicating with the cluster:
  
  ```
