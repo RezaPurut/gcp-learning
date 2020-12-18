@@ -48,4 +48,5 @@ gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.clie
  ```
  gcloud auth activate-service-account --key-file=key.json
  ```
- 
+ *NOTE: In case you do this in one user/account, you will need to reactivate the it. Use this command:*
+ `gcloud auth login`
