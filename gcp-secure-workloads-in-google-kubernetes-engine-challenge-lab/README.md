@@ -40,3 +40,7 @@ MYPROJECT=$(gcloud config list --format 'value(core.project)')
 
 gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.client --member="serviceAccount:kraken-sa@${MYPROJECT}.iam.gserviceaccount.com"
 ```
+ 6. Obtain the service acc credentials
+ ```
+ gcloud iam service-accounts keys create key.json --iam-account "kraken-sa@${MYPROJECT}.iam.gserviceaccount.com"
+ ```
