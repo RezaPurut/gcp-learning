@@ -34,3 +34,9 @@ gcloud sql users create test --instance=kraken-sql --password=wordpress --host=%
 ```
 gcloud iam service-accounts create kraken-sa  --display-name="kraken-sa"
 ```
+5. Bind the service account to your project, give the role `roles/cloudsql.client`
+```
+MYPROJECT=$(gcloud config list --format 'value(core.project)')
+
+gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.client --member="serviceAccount:kraken-sa@${MYPROJECT}.iam.gserviceaccount.com"
+```
