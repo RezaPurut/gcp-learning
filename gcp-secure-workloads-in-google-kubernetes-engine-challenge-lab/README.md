@@ -44,3 +44,8 @@ gcloud projects add-iam-policy-binding "${MYPROJECT}" --role=roles/cloudsql.clie
  ```
  gcloud iam service-accounts keys create key.json --iam-account "kraken-sa@${MYPROJECT}.iam.gserviceaccount.com"
  ```
+ 7. Save the service account credentials in a json file
+ ```
+ gcloud auth activate-service-account --key-file=key.json
+ ```
+ 
