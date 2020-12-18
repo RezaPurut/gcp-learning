@@ -29,3 +29,8 @@ gcloud sql users create wordpress --instance=kraken-sql --password=wordpress --h
 
 gcloud sql users create test --instance=kraken-sql --password=wordpress --host=%
 ```
+### Create a service account for access to your WordPress database from your WordPress instances
+4. Create the service account
+```
+gcloud iam service-accounts create kraken-sa  --display-name="kraken-sa"
+```
